@@ -1,15 +1,7 @@
-import { useState } from "react";
-import ExpenseItem from "./components/ExpenseItem";
+import Expenses from "./components/Expenses";
 
-function App() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <div className="App">
-      <h1>Hello World!!</h1>
-      <ExpenseItem />
-    </div>
-  );
-}
+const App = () => {
+  return <Expenses />;
+};
 
 export default App;
