@@ -1,5 +1,5 @@
 import ExpenseItem from "./ExpenseItem";
-import Filter from "./Filter";
+import ExpenseFilter from "../ExpensesChart/ExpenseFilter";
 
 interface Expense {
   id: number;
@@ -11,7 +11,7 @@ interface Expense {
 const Expenses = (props: any) => {
   return (
     <div className="my-5">
-      <Filter />
+      <ExpenseFilter />
       {props.items.map((expense: Expense) => (
         <ExpenseItem
           key={expense.id}
