@@ -14,6 +14,10 @@ function ExpenseForm(props: any) {
       date: new Date(date),
     };
 
+    setTitle("");
+    setAmount("");
+    setDate("");
+
     props.submitForm(inputs);
   };
 
@@ -33,6 +37,7 @@ function ExpenseForm(props: any) {
             className="form-control"
             id="title"
             onChange={updateTitle}
+            value={title}
           />
         </div>
         <div className="w-100">
@@ -46,6 +51,7 @@ function ExpenseForm(props: any) {
             min={0}
             step={0.1}
             onChange={updateAmount}
+            value={amount}
           />
         </div>
         <div className="w-100">
@@ -57,6 +63,7 @@ function ExpenseForm(props: any) {
             className="form-control"
             id="date"
             onChange={updateDate}
+            value={date}
           />
         </div>
         <button type="submit" className="mt-3 btn btn-primary d-block ms-auto">

@@ -1,22 +1,23 @@
 import { useState } from "react";
-import ExpenseBar from "./ExpenseBar";
+import ExpensesBar from "./ExpensesBar";
 
-function ExpenseFilter(props: any) {
-  const [date, setDate] = useState("");
+function ExpensesFilter(props: any) {
+  const [year, setYear] = useState("2020");
 
   const updateDate = (event: any) => {
-    setDate(event.target.value);
-    props.date = date;
+    const filteredYear = event.target.value;
+    setYear(filteredYear);
+    props.setFilteredYear(filteredYear);
   };
 
   return (
-    <div>
+    <div className="mb-5">
       <div
         className="mb-3 mx-auto"
         style={{ maxWidth: "800px", width: "100%" }}
       >
-        <label htmlFor="year" className="col-sm-2 col-form-label">
-          Year
+        <label htmlFor="year" className="mb-2">
+          Filter expenses by year:
         </label>
         <select className="form-control" id="year" onChange={updateDate}>
           <option value="2020">2020</option>
@@ -25,9 +26,9 @@ function ExpenseFilter(props: any) {
           <option value="2023">2023</option>
         </select>
       </div>
-      <ExpenseBar />
+      <ExpensesBar items={props.items} />
     </div>
   );
 }
 
-export default ExpenseFilter;
+export default ExpensesFilter;

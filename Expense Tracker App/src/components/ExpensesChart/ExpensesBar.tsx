@@ -9,7 +9,17 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 
-function ExpenseBar() {
+function ExpensesBar(props: any) {
+  let filteredExpensesByYear = Array(12).fill(0);
+
+  if (props.items.length > 0) {
+    filteredExpensesByYear = props.items.reduce((result: any, current: any) => {
+      const month = current.date.getMonth();
+      result[month] += +current.amount;
+      return result;
+    }, filteredExpensesByYear);
+  }
+
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -28,7 +38,7 @@ function ExpenseBar() {
     },
     scales: {
       y: {
-        suggestedMax: 150_000,
+        suggestedMax: 500_000,
       },
     },
   };
@@ -54,10 +64,7 @@ function ExpenseBar() {
       {
         label: "Monthly Expense",
         borderRadius: 5,
-        data: [
-          10_000, 20_000, 30_000, 40_000, 50_000, 60_000, 70_000, 80_000,
-          90_000, 100_000, 110_000, 120_000,
-        ],
+        data: filteredExpensesByYear,
         backgroundColor: "rgba(53, 162, 235)",
       },
     ],
@@ -73,4 +80,4 @@ function ExpenseBar() {
   );
 }
 
-export default ExpenseBar;
+export default ExpensesBar;

@@ -23,8 +23,7 @@ const App = () => {
 
   const addNewExpense = (expense: Expense) => {
     setExpenses((previousExpenses: Expense[]) => {
-      console.log([...previousExpenses, expense]);
-      return [...previousExpenses, expense];
+      return [expense, ...previousExpenses];
     });
   };
 
