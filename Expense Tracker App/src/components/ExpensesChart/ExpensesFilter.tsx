@@ -1,12 +1,8 @@
-import { useState } from "react";
 import ExpensesBar from "./ExpensesBar";
 
 function ExpensesFilter(props: any) {
-  const [year, setYear] = useState("2020");
-
   const updateDate = (event: any) => {
     const filteredYear = event.target.value;
-    setYear(filteredYear);
     props.setFilteredYear(filteredYear);
   };
 
