@@ -11,7 +11,7 @@ function ExpensesFilter(props: any) {
   };
 
   return (
-    <div className="mb-5">
+    <>
       <div
         className="mb-3 mx-auto"
         style={{ maxWidth: "800px", width: "100%" }}
@@ -27,7 +27,7 @@ function ExpensesFilter(props: any) {
         </select>
       </div>
       <ExpensesBar items={props.items} />
-    </div>
+    </>
   );
 }
 

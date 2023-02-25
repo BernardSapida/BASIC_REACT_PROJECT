@@ -8,18 +8,20 @@ interface Expense {
 }
 
 function ExpensesList(props: any) {
-  return (
-    <div>
-      {props.items.map((expense: Expense) => (
+  const expenseList =
+    props.items.length > 0 ? (
+      props.items.map((expense: Expense) => (
         <ExpenseItem
           key={expense.id}
           title={expense.title}
           amount={expense.amount}
           date={expense.date}
         />
-      ))}
-    </div>
-  );
+      ))
+    ) : (
+      <p className="text-center">No expense record for this year!</p>
+    );
+  return <div>{expenseList}</div>;
 }
 
 export default ExpensesList;

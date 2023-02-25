@@ -29,7 +29,9 @@ const App = () => {
 
   return (
     <div className="my-5 container">
+      <h1 className="text-center mb-3">Expense Tracker App</h1>
       <NewExpense newExpense={addNewExpense} />
+      <hr />
       <Expenses items={expenses} />
     </div>
   );

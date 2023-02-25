@@ -7,11 +7,7 @@ function NewExpense(props: any) {
     props.newExpense(newExpense);
   };
 
-  return (
-    <div>
-      <ExpenseForm submitForm={saveNewExpense} />
-    </div>
-  );
+  return <ExpenseForm submitForm={saveNewExpense} />;
 }
 
 export default NewExpense;

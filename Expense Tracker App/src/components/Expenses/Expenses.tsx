@@ -17,10 +17,11 @@ const Expenses = (props: any) => {
   };
 
   return (
-    <div className="my-5">
+    <>
       <ExpensesFilter items={filteredExpenses} setFilteredYear={filteredList} />
+      <hr />
       <ExpensesList items={filteredExpenses} />
-    </div>
+    </>
   );
 };
 
