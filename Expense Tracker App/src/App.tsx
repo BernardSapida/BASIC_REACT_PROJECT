@@ -10,14 +10,7 @@ interface Expense {
 }
 
 const App = () => {
-  const data: Expense[] = [
-    {
-      id: Date.now() - 1,
-      title: "Car Insurance",
-      amount: 450_000,
-      date: new Date(2023, 1, 17),
-    },
-  ];
+  const data: Expense[] = [];
 
   const [expenses, setExpenses] = useState(data);
 
