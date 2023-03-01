@@ -27,3 +27,13 @@
   padding: 0.25rem;
   border: 1px solid #ccc;
 }
+
+button {
+  margin: 5px;
+  border: unset;
+  color:#f4f0fa;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #3c0080;
+}
